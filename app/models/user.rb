@@ -14,6 +14,8 @@ class User < ApplicationRecord
   }
   validates :username, uniqueness: true
 
+  has_many :media, dependent: :destroy
+
   def login
     @login || username || email
   end
