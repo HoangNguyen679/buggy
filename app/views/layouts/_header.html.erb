@@ -6,7 +6,10 @@
       <% end %>
     </div>
     <% if user_signed_in? %>
-      <div class="">
+      <div class="btn-group">
+        <%= button_to share_path, method: :get, class: "btn" do %>
+          Share
+        <% end %>
         <%= button_to destroy_user_session_path, class: "btn", method: :delete do %>
           Log out
         <% end %>

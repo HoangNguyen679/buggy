@@ -79,3 +79,7 @@ gem "rubocop", "~> 1.35", :group => :development
 gem "rubocop-rails", "~> 2.15", :group => :development
 
 gem "tailwindcss-rails", "~> 2.0"
+
+gem "faraday", "~> 2.5"
+
+gem "faraday-net_http", "~> 3.0"

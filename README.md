@@ -85,3 +85,17 @@ Generate views
 ```
 ./bin/rails db:seed:replant
 ```
+
+## sharing
+
+```
+./bin/rails g controller Sharing create
+```
+
+## Faraday
+
+http client
+
+```
+./bin/bundle add faraday faraday-net_http
+```

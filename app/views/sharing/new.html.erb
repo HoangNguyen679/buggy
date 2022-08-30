@@ -1,0 +1,20 @@
+<%= render 'layouts/header' %>
+<div class="sharing">
+  <div class="sharing-form">
+    <div class="sharing-form-content">
+      <%= form_with model: @medium, url: share_path do |f| %>
+        <div class="text-field">
+          <%= f.label :url, "Youtube URL" %>
+          <%= f.text_field :url, autofocus: true %>
+        </div>
+        <div class="text-field">
+          <%= f.label :description %>
+          <%= f.text_area :description, placeholder: "Share your thought right now ;)", rows: "5" %>
+        </div>
+        <div class="sharing-form-footer">
+          <%= f.submit "Share", class: "btn-sharing" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
