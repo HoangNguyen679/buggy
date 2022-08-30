@@ -2,3 +2,12 @@ require: rubocop-rails
 
 AllCops:
   NewCops: enable
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
+TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
