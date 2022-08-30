@@ -74,3 +74,6 @@ end
 gem "devise", "~> 4.8"
 
 gem "annotate", "~> 3.2", :group => :development
+
+gem "rubocop", "~> 1.35", :group => :development
+gem "rubocop-rails", "~> 2.15", :group => :development

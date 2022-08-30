@@ -39,10 +39,22 @@ DB migrate
 ./bin/rails db:migrate
 ```
 
-## Login
+### View
 
 Generate views
 
 ```
 ./bin/rails g devise:views
+```
+
+## Homepage
+
+```
+./bin/bundle add rubocop rubocop-rails
+```
+
+## Rubocop
+
+```
+./bin/bundle add rubocop rubocop-rails --group development
 ```
