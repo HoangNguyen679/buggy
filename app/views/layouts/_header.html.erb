@@ -1,0 +1,22 @@
+<nav class="navbar">
+  <div class="content">
+    <div class="name">
+      <%= link_to root_path do %>
+        <h1>Funny Movies</h1>
+      <% end %>
+    </div>
+    <% if user_signed_in? %>
+      <div class="">
+        <%= button_to destroy_user_session_path, class: "btn", method: :delete do %>
+          Log out
+        <% end %>
+      </div>
+    <% else %>
+      <div class="">
+        <%= button_to new_user_session_path, class: "btn" do %>
+          Login
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</nav>
