@@ -32,6 +32,11 @@
   @apply text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300;
   @apply font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0;
   @apply dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800;
+  @apply m-3;
+}
+
+.navbar .content .btn-group {
+  @apply flex justify-center;
 }
 
 /* Home */
@@ -163,4 +168,54 @@
 
 .authentication-footer-info a {
   @apply text-blue-600;
+}
+
+/* Sharing form */
+
+.sharing-form {
+  @apply w-full max-w-xl;
+  @apply mx-auto;
+  @apply mt-20;
+}
+
+.sharing-form .page-title {
+  @apply text-center;
+  @apply m-3;
+}
+
+.sharing-form .sharing-form-content {
+  @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+}
+
+.sharing-form .sharing-form-content .text-field {
+  @apply md:flex md:items-center mb-6;
+}
+
+.sharing-form .sharing-form-content .text-field label {
+  @apply md:w-1/3;
+  @apply block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4;
+}
+
+.sharing-form .sharing-form-content .text-field input[type="text"] {
+  @apply md:w-2/3;
+  @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500;
+}
+
+.sharing-form .sharing-form-content .text-field textarea {
+  @apply md:w-2/3;
+  @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500;
+}
+
+.sharing-form-footer {
+  @apply flex items-center justify-center;
+  @apply my-10;
+}
+
+.btn-sharing {
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none;
+  @apply w-60;
+}
+
+textarea::placeholder {
+  @apply text-center italic;
 }
