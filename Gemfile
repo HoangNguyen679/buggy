@@ -77,3 +77,5 @@ gem "annotate", "~> 3.2", :group => :development
 
 gem "rubocop", "~> 1.35", :group => :development
 gem "rubocop-rails", "~> 2.15", :group => :development
+
+gem "tailwindcss-rails", "~> 2.0"

@@ -58,3 +58,10 @@ Generate views
 ```
 ./bin/bundle add rubocop rubocop-rails --group development
 ```
+
+## Tailwindcss
+
+```
+./bin/bundle add tailwindcss-rails
+./bin/rails tailwindcss:install
+```
