@@ -31,6 +31,7 @@ Annotate gem
 
 ```
 ./bin/bundle add annotate --group development
+./bin/rails g annotate:install
 ```
 
 DB migrate

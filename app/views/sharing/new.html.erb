@@ -1,6 +1,13 @@
 <%= render 'layouts/header' %>
 <div class="sharing">
   <div class="sharing-form">
+    <% if @medium.errors.any? %>
+      <ul>
+        <% @medium.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
     <div class="sharing-form-content">
       <%= form_with model: @medium, url: share_path do |f| %>
         <div class="text-field">

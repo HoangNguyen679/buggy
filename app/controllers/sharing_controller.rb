@@ -9,34 +9,42 @@ class SharingController < ApplicationController
   end
 
   # rubocop:disable Metrics/MethodLength
-  # rubocop:disable Metrics/AbcSize
   def create
     @medium = Medium.new(medium_params)
+    @medium.user = current_user
 
     url = @medium.url
     yt_info_url = "https://www.youtube.com/oembed?url=#{url}&format=json"
-    begin
-      response = Faraday.get(yt_info_url)
-      yt_info = JSON.parse(response.body)
-    rescue StandardError => e
-      render :new, status: :unprocessable_entity
-    end
 
-    @medium.title = yt_info['title']
-    @medium.user = current_user
+    title = get_youtube_video_info(yt_info_url)
 
-    if @medium.save
-      redirect_to root_path
+    if title.nil?
+      @medium.errors.add(:base, 'Can not retrieve data from Youtube.Please try another way')
     else
-      render :new, status: :unprocessable_entity
+      @medium.title = title
+      redirect_to root_path and return if @medium.save
     end
+
+    render :new, status: :unprocessable_entity
   end
   # rubocop:enable Metrics/MethodLength
-  # rubocop:enable Metrics/AbcSize
 
   private
 
   def medium_params
     params.require(:medium).permit(:url, :description)
+  end
+
+  def get_youtube_video_info(url)
+    begin
+      response = Faraday.get(url)
+      youtube_info = JSON.parse(response.body)
+    rescue StandardError
+      return nil
+    end
+
+    return nil if youtube_info.nil?
+
+    youtube_info['title']
   end
 end

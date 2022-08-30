@@ -2,6 +2,6 @@
 
 class HomeController < ApplicationController
   def index
-    @media = Medium.all
+    @media = Medium.all.reverse
   end
 end
