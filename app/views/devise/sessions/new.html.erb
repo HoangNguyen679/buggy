@@ -2,7 +2,7 @@
 <div class="authentication-form">
   <div class="authentication-form-content">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="email-field">
+      <div class="text-field">
         <%= f.label :login, "Username / Email" %>
         <%= f.text_field :login, autofocus: true %>
       </div>
