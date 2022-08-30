@@ -1,4 +1,44 @@
 <%= render 'layouts/header' %>
 <div class="home">
-  <h1>This is Home</h1>
+  <div class="video-part">
+    <% @media.each do |medium| %>
+      <div class="line">
+        <div class="video-content">
+          <iframe src='<%= make_youtube_embed_url(medium.url) %>' frameborder='0' allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <div class="title"> 
+            <%= medium.title %>
+          </div>
+          <div class="author"> 
+            Share by <%= medium.user.username %>
+          </div>
+          <div class="description"> 
+              <div data-controller="readmore"
+                data-readmore-full-content-value="<%= medium.description %>"
+                data-readmore-hide-class="hide"
+              >
+              <div data-readmore-target="content">
+                <%= truncate_description(medium.description) %>
+              </div>
+              <button 
+                class="hide btn-showMore"
+                data-readmore-target="moreButton"
+                data-action="readmore#showMore"
+              >
+                Show more
+              </button>
+              <button 
+                class="hide btn-showMore"
+                data-readmore-target="lessButton"
+                data-action="readmore#showLess"
+              >
+                Show less
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

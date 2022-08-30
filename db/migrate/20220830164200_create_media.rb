@@ -2,7 +2,7 @@ class CreateMedia < ActiveRecord::Migration[7.0]
   def change
     create_table :media do |t|
       t.string :title
-      t.string :url, null: false
+      t.string :url, null: false, unique: true
       t.text :description
       t.references :user, null: false, foreign_key: true
 
