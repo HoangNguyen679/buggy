@@ -38,3 +38,11 @@ DB migrate
 ```
 ./bin/rails db:migrate
 ```
+
+## Login
+
+Generate views
+
+```
+./bin/rails g devise:views
+```
