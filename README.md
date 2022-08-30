@@ -65,3 +65,10 @@ Generate views
 ./bin/bundle add tailwindcss-rails
 ./bin/rails tailwindcss:install
 ```
+
+## Add username to user
+
+```
+./bin/rails g migration add_username_to_users username:string:uniq
+./bin/rails db:migrate
+```
