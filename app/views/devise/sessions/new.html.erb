@@ -3,8 +3,8 @@
   <div class="authentication-form-content">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="email-field">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.label :login, "Username / Email" %>
+        <%= f.text_field :login, autofocus: true %>
       </div>
 
       <div class="password-field">
