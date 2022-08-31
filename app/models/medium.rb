@@ -12,7 +12,8 @@
 #
 # Indexes
 #
-#  index_media_on_user_id  (user_id)
+#  index_media_on_url_and_user_id  (url,user_id) UNIQUE
+#  index_media_on_user_id          (user_id)
 #
 # Foreign Keys
 #
@@ -20,6 +21,8 @@
 #
 class Medium < ApplicationRecord
   belongs_to :user
+
+  validates_uniqueness_of :url, scope: :user_id
 
   paginates_per 5
 end

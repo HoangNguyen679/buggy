@@ -12,21 +12,23 @@
 #
 # Indexes
 #
-#  index_media_on_user_id  (user_id)
+#  index_media_on_url_and_user_id  (url,user_id) UNIQUE
+#  index_media_on_user_id          (user_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (user_id => users.id)
 #
-
-one:
-  title: MyString
-  url: MyString
-  description: MyText
-  user: one
-
-two:
-  title: MyString
-  url: MyString
-  description: MyText
-  user: two
+FactoryBot.define do
+  factory :medium do
+    user { create(:user) }
+    title { SecureRandom.hex(3) }
+    url do
+      [
+        'https://youtube.com/v=abcxyz',
+        'https://youtube.com/v=defgik',
+      ].sample
+    end
+    description { SecureRandom.hex(20) }
+  end
+end
