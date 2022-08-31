@@ -50,10 +50,13 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-
+  # gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'pry-byebug', platforms: %i[mri mingw x64_mingw]
+  gem "factory_bot_rails", "~> 6.2.0"
   gem 'rspec-rails', '~> 6.0.0.rc1'
-  gem "factory_bot_rails", "~> 6.2"
+  gem "rubocop", "~> 1.35"
+  gem "rubocop-rails", "~> 2.15"
+  gem "rubocop-rspec"
 end
 
 group :development do
@@ -66,14 +69,10 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
   gem "annotate", "~> 3.2"
-  gem "rubocop", "~> 1.35"
-  gem "rubocop-rails", "~> 2.15"
 end
 
 group :test do
   gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
   gem "launchy"
   gem "apparition"
 end

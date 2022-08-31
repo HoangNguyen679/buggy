@@ -21,6 +21,7 @@
 #
 FactoryBot.define do
   factory :medium do
+    user { create(:user) }
     title { SecureRandom.hex(3) }
     url do
       [

@@ -22,5 +22,27 @@
 require 'rails_helper'
 
 RSpec.describe Medium, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#valid?' do
+    it 'is valid when user id and url is unique' do
+      user = create(:user)
+      user2 = create(:user)
+
+      create(user:, url: 'https://youtube.com/xv=123456')
+      medium2 = create(user:, url: 'https://youtube.com/xv=456789')
+      medium3 = create(user: user2, url: 'https://youtube.com/xv=456789')
+
+      expect(medium2).to be_valid
+      expect(medium3).to be_valid
+    end
+
+    it 'is invalid when email is taken' do
+      user = create(:user)
+
+      url = 'https://youtube.com/xv=123456'
+      create(user:, url:)
+      medium2 = create(user:, url:)
+
+      expect(medium2).not_to be_valid
+    end
+  end
 end
