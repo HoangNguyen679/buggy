@@ -108,3 +108,26 @@ http client
 ./bin/rails g kaminari:config
 ./bin/rails g kaminari:views default -e erb
 ```
+
+## RSpec
+
+```
+# Gemfile
+gem 'rspec-rails', '~> 6.0.0.rc1'
+
+./bin/bundle
+
+./bin/rails g rspec:install
+
+./bin/bundle add factory_bot_rails
+
+# for integration test
+./bin/bundle add apparition launchy capybara--group test
+```
+
+Generate test model
+
+```
+./bin/rails g rspec:model user
+./bin/rails g rspec:model medium
+```

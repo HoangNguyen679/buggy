@@ -71,6 +71,9 @@ GEM
     annotate (3.2.0)
       activerecord (>= 3.2, < 8.0)
       rake (>= 10.4, < 14.0)
+    apparition (0.6.0)
+      capybara (~> 3.13, < 4)
+      websocket-driver (>= 0.6.5)
     ast (2.4.2)
     bcrypt (3.1.18)
     bindex (0.8.1)
@@ -98,8 +101,14 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.5.0)
     digest (3.1.0)
     erubi (1.11.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     faraday (2.5.2)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -130,6 +139,8 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    launchy (2.5.0)
+      addressable (~> 2.7)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -205,6 +216,23 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-rails (6.0.0.rc1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
+    rspec-support (3.11.0)
     rubocop (1.35.1)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -274,18 +302,22 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (~> 3.2)
+  apparition
   bootsnap
   capybara
   debug
   devise (~> 4.8)
+  factory_bot_rails (~> 6.2)
   faraday (~> 2.5)
   faraday-net_http (~> 3.0)
   importmap-rails
   jbuilder
   kaminari (~> 1.2)
+  launchy
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
+  rspec-rails (~> 6.0.0.rc1)
   rubocop (~> 1.35)
   rubocop-rails (~> 2.15)
   selenium-webdriver
