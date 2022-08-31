@@ -87,7 +87,7 @@ Generate views
 ./bin/rails db:seed:replant
 ```
 
-## sharing
+## Sharing
 
 ```
 ./bin/rails g controller Sharing create
@@ -99,4 +99,12 @@ http client
 
 ```
 ./bin/bundle add faraday faraday-net_http
+```
+
+## Kaminari
+
+```
+./bin/bundle add kaminari
+./bin/rails g kaminari:config
+./bin/rails g kaminari:views default -e erb
 ```

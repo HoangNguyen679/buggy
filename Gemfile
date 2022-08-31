@@ -83,3 +83,5 @@ gem "tailwindcss-rails", "~> 2.0"
 gem "faraday", "~> 2.5"
 
 gem "faraday-net_http", "~> 3.0"
+
+gem "kaminari", "~> 1.2"
