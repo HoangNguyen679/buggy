@@ -75,6 +75,8 @@ group :test do
   gem "capybara"
   gem "launchy"
   gem "apparition"
+
+  gem 'database_cleaner-active_record'
 end
 
 gem "devise", "~> 4.8"
