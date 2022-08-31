@@ -7,14 +7,14 @@
           <iframe src='<%= make_youtube_embed_url(medium.url) %>' frameborder='0' allowfullscreen></iframe>
         </div>
         <div class="video-info">
-          <div class="title"> 
+          <div class="title">
             <%= medium.title %>
           </div>
-          <div class="author"> 
+          <div class="author">
             Share by <%= medium.user.username %>
           </div>
-          <div class="description"> 
-              <div data-controller="readmore"
+          <div class="description">
+            <div data-controller="readmore"
                 data-readmore-full-content-value="<%= medium.description %>"
                 data-readmore-hide-class="hide"
               >
@@ -41,4 +41,5 @@
       </div>
     <% end %>
   </div>
+  <%= paginate @media %>
 </div>

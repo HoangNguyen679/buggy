@@ -219,3 +219,25 @@
 textarea::placeholder {
   @apply text-center italic;
 }
+
+/* Pagination */
+
+.pagination-part {
+  @apply flex justify-center;
+}
+
+.pagination-part .pagination {
+  @apply flex justify-center;
+}
+
+.pagination-part a {
+  @apply text-blue-600;
+}
+
+.pagination-part a:hover {
+  @apply text-blue-700;
+}
+
+.pagination-part .element {
+  @apply m-3;
+}
