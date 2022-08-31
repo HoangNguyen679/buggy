@@ -22,5 +22,7 @@
 class Medium < ApplicationRecord
   belongs_to :user
 
+  validates_uniqueness_of :url, scope: :user_id
+
   paginates_per 5
 end
